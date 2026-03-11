@@ -68,7 +68,7 @@ public class TeamService {
                 .getName();
         var user = userRepository.findByEmail(email)
                 .orElseThrow();
-        List<TeamMembership> memberships = teamMembershipRepository.findTeamMembershipByUser(user);
+        List<TeamMembership> memberships = teamMembershipRepository.findTeamMembershipsByUser(user);
         List<Team> teams = new ArrayList<>();
         for (TeamMembership membership : memberships) {
             teams.add(membership.getTeam());

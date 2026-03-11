@@ -2,6 +2,7 @@ package com.nmen.team;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class TeamController {
         return ResponseEntity.ok(teamService.create(request));
     }
 
+    @PreAuthorize("@teamSecurity.isTeamMember(#teamId, principal.id)")
     @PostMapping("/{teamId}/members")
     public ResponseEntity<TeamMembership> addMember(@PathVariable Integer teamId, @RequestBody AddMemberRequest request) {
         return ResponseEntity.ok(teamService.addMember(request, teamId));

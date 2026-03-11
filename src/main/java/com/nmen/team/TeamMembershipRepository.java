@@ -8,5 +8,9 @@ import java.util.Optional;
 
 public interface TeamMembershipRepository extends JpaRepository<TeamMembership, Integer> {
 
-    List<TeamMembership> findTeamMembershipByUser(User user);
+
+    List<TeamMembership> findTeamMembershipsByUser(User user);
+
+
+    boolean existsTeamMembershipByTeamIdAndUserId(Integer teamId, Integer userId);
 }
