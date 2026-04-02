@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.nmen</groupId>
-    <artifactId>task-tracker</artifactId>
+    <artifactId>taskcollab-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>task-tracker</name>
     <description>task-tracker</description>
